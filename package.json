@@ -5,9 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "clean-webpack-plugin": "^0.1.14",
+    "cookie-parser": "^1.4.3",
     "css-loader": "^0.26.0",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "node-sass": "^3.13.0",
+    "postcss-loader": "^1.1.1",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-logger": "^1.1.0",
@@ -36,7 +40,7 @@
   "scripts": {
     "test": "npm test",
     "start": "babel-watch index.js",
-    "build": "webpack -d -w --config ./webpack.config.babel.js"
+    "build": "webpack -d -w --config ./webpack/webpack.config.babel.js"
   },
   "author": "",
   "license": "ISC"

@@ -9,7 +9,7 @@ const buildFolder = 'build';
 const buildPath = path.resolve(__dirname, `../public/${buildFolder}`);
 
 module.exports = {
-    context: path.resolve(__dirname, "src"),
+    context: path.resolve(__dirname, "../src"),
 
     entry: {
         app: "./client",
@@ -35,30 +35,40 @@ module.exports = {
             {
                 test: /\.(sass|scss)$/,
                 use: [
-                    "style-loader",
-                    "css-loader",
-                    "sass-loader",
+                    ExtractTextPlugin.extract('css'),
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true,
+                            minimize:true,
+                            importLoaders:1,
+                            localIdentName:'[path]__[local]___[hash:base64:5]'
+                        }
+                    },
+                    "sass-loader"
                 ]
             },
             {
-                test: /\.css$/,
-                use: [
-                    "style-loader",
-                    { loader: "css-loader", options: { modules: true } }
-                ],
-            },
-            {
                 test: /\.js$/,
-                use: [{
-                    loader: "babel",
-                    options: { presets: ["es2015", "react", "stage-0"] }
-                }],
+                use: [
+                    {
+                        loader: "babel-loader",
+                        options: {
+                            ignore:'/node_modules',
+                            presets: ["es2015", "react", "stage-0"]
+                        }
+                    }
+                ]
             }
         ]
     },
 
     plugins:[
         new webpack.DefinePlugin({'process.env.BROWSER': true}),
-        new CleanWebpackPlugin([buildPath], {root: path.resolve(__dirname, '..')})
+        new CleanWebpackPlugin([buildPath], {root: path.resolve(__dirname, '..')}),
+        new ExtractTextPlugin({
+          filename: "[name].bundle.css",
+          allChunks: true,
+        }),
     ]
 };

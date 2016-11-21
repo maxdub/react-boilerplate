@@ -2,7 +2,7 @@ import { Component } from 'react';
 import NavigationLink from './NavigationLink';
 
 if (process.env.BROWSER) {
-    require('./styles.css');
+    require('./styles.scss');
 }
 
 export default class Navigation extends Component {
