@@ -1,3 +1,10 @@
+###Installation
+    `npm install`
+
+###Usage
+    `npm run build`
+    `npm start`
+
 ###Done
     *server side rendering with sagas example integrated
     *hook up with express
