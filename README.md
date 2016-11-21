@@ -1,9 +1,9 @@
 ###Installation
-npm install
+-  npm install
 
 ###Usage
--npm run build
--npm start
+-  npm run build
+-  npm start
 
 ###Done
 1. server side rendering with sagas example integrated
