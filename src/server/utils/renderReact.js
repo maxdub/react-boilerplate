@@ -24,7 +24,6 @@ export default function(req, res, next) {
 				const state = store.getState();
                 const html = renderToString(rootComponent);
 
-				// reply(renderApplication({state, html}));
                 res.render('index', {
                     html,
                     preloadedState: JSON.stringify(state)
