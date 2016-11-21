@@ -1,21 +1,21 @@
 ###Installation
-    `npm install`
+    npm install
 
 ###Usage
-    `npm run build`
-    `npm start`
+    -npm run build
+    -npm start
 
 ###Done
-    *server side rendering with sagas example integrated
-    *hook up with express
-    *css modules hook up with sass
+    1. server side rendering with sagas example integrated
+    2. hook up with express
+    3. css modules hook up with sass
 
 ###Todo
-    *implement ducks with selectors
-    *live reload server
-    *production build script
-    *environent variables for server + client
-    *redux tests
+    1. implement ducks with selectors
+    2. live reload server
+    3. production build script
+    4. environent variables for server + client
+    5. redux tests
 
 ###Possibles
-    *cli scaffold of module creation
+    1. cli scaffold of module creation
